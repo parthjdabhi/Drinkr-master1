@@ -24,3 +24,8 @@ struct Constants {
         static let imageUrl = "imageUrl"
     }
 }
+
+//Globals
+var bars:[Dictionary<String,AnyObject>] = []
+var filteredBars:[Dictionary<String,AnyObject>] = []
+var selectedBar: Dictionary<String,AnyObject> = [:]

@@ -43,28 +43,55 @@ extension UIViewController {
     }
 }
 
+
+let weekdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
+
 extension NSDate {
-    func daysOfTheWeek() -> Array<String> {
-        let weekdays = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-        ]
-        
+    
+    func daysOfTheWeek() -> (DaysWithToday:Array<String>,AllDays:Array<String>)
+    {
         let calendar: NSCalendar = NSCalendar.currentCalendar()
         let components: NSDateComponents = calendar.components(.Weekday, fromDate: self)
-        var Days:Array<String> = []
-        Days.append("Today")
-        Days.appendContentsOf(weekdays.suffixFrom(components.weekday))
+        var DaysWithToday:Array<String> = []
+        var AllDays:Array<String> = []
+        
+        //Days.append("Today")
+        AllDays.append(self.dayOfTheWeek())
+        DaysWithToday.append("Today")
+        
+        AllDays.appendContentsOf(weekdays.suffixFrom(components.weekday))
+        DaysWithToday.appendContentsOf(weekdays.suffixFrom(components.weekday))
+        
         if components.weekday > 0 {
-            Days.appendContentsOf(weekdays.prefixUpTo(components.weekday - 1))
+            AllDays.appendContentsOf(weekdays.prefixUpTo(components.weekday - 1))
+            DaysWithToday.appendContentsOf(weekdays.prefixUpTo(components.weekday - 1))
         }
-        print("daysOfTheWeek Days : \(Days)")
-        return Days
+        
+        print("daysOfTheWeek Days : \(DaysWithToday)")
+        print("All Week Days : \(AllDays)")
+        
+        return (DaysWithToday,AllDays)
+        //return Days
         //return weekdays[components.weekday - 1]
+    }
+    func dayOfTheWeek() -> String
+    {
+        let calendar: NSCalendar = NSCalendar.currentCalendar()
+        let components: NSDateComponents = calendar.components(.Weekday, fromDate: self)
+        return weekdays[components.weekday - 1]
+    }
+}
+
+extension String {
+    func toDouble() -> Double? {
+        return NSNumberFormatter().numberFromString(self)?.doubleValue
     }
 }

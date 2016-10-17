@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         FIRApp.configure()
-
+        
+        NSDate().daysOfTheWeek().DaysWithToday
+        
         return true
     }
     

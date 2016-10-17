@@ -27,7 +27,7 @@ class CommonUtils: NSObject {
     }
     
     // hide progress view
-    func hideProgress(){
+    func hideProgress() {
         progressView.removeFromSuperview()
         progressView.hide(true)
     }
@@ -38,3 +38,5 @@ class CommonUtils: NSObject {
         return image!
     }
 }
+
+

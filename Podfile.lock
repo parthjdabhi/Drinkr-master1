@@ -105,7 +105,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.0)
   - SwiftyJSON (~> 2.3)
   - SWRevealViewController (~> 2.3)
-  - UIActivityIndicator-for-SDWebImage (~> 1.2)
+  - UIActivityIndicator-for-SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
@@ -136,6 +136,6 @@ SPEC CHECKSUMS:
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
 
-PODFILE CHECKSUM: 433149f85031440c959476b32ca924f88e33991b
+PODFILE CHECKSUM: 6ccd108005143a388d7de30814d7ea3cdf8973a6
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.0.1

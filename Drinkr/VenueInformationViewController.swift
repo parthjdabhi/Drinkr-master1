@@ -53,7 +53,7 @@ class VenueInformationViewController: UIViewController, UIScrollViewDelegate, UI
         drinkForLikeBool.addTarget(self, action: #selector(VenueInformationViewController.switchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         //Sliding control
-        let sControl = SlidingControl(sectionTitles: NSDate().daysOfTheWeek())
+        let sControl = SlidingControl(sectionTitles: NSDate().daysOfTheWeek().DaysWithToday)
         sControl.autoresizingMask = [.FlexibleRightMargin, .FlexibleWidth]
         vDays.layoutIfNeeded()
         sControl.frame = vDays.frame
@@ -134,6 +134,7 @@ class VenueInformationViewController: UIViewController, UIScrollViewDelegate, UI
     
     func sliderControlChangedValue(sliderControl:SlidingControl) {
         print("Selected index \(sliderControl.selectedSegmentIndex) UIControlEventValueChanged")
+        print("Selected Day - \(NSDate().daysOfTheWeek().AllDays[sliderControl.selectedSegmentIndex])")
     }
     
     @IBAction func editButton(sender: AnyObject) {

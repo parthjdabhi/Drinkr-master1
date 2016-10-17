@@ -24,8 +24,8 @@ public class PDCarouselFlowLayout: UICollectionViewFlowLayout {
         }
     }
     
-    @IBInspectable public var sideItemScale: CGFloat = 0.9
-    @IBInspectable public var sideItemAlpha: CGFloat = 0.8
+    @IBInspectable public var sideItemScale: CGFloat = 0.8
+    @IBInspectable public var sideItemAlpha: CGFloat = 0.7
     public var spacingMode = PDCarouselFlowLayoutSpacingMode.fixed(spacing: 40)
     
     private var state = LayoutState(size: CGSizeZero, direction: .Horizontal)
